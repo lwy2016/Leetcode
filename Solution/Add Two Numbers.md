@@ -169,9 +169,10 @@ public ListNode addTwoNumbers(ListNode l1, ListNode l2){
 				carry += p2.val;
 				p2 = p2.next;
 			}
-			
+			// 两者相加的个位数
 			p3.next = new ListNode(carry%10);
 			p3 = p3.next;
+			// 两者相加的十位数，且要么为1，要么为0
 			carry /= 10;
 		}
 		
