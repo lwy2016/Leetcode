@@ -3,8 +3,10 @@ Description:
 Determine whether an integer is a palindrome. Do this without extra space.
 
 Solution:
+
 回文数是自然数，最小的回文数是0，其他回文数比如，1,22,333,424,5665,788997,9902099
-此题与LeetCode-7题Reverse Integer有类似之处，将反转之后的数字与原数字比较，如果相等，则该数字为回文数
+此题与LeetCode-7题[Reverse Integer](https://github.com/lwy2016/Leetcode/blob/master/README.md)有类似之处，将反转之后的数字与原数字比较，如果相等，则该数字为回文数
+
 ```java
 public class Solution {
     public boolean isPalindrome(int x) {
