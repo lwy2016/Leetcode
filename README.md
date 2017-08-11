@@ -3,6 +3,8 @@
 
 | DescSorted | Title |Solution | Difficulty |
 | --- | ----- | ------ |  ------- |
+|13|[Roamn to Integer](https://leetcode.com/problems/roman-to-integer/description/)|[Java](https://github.com/lwy2016/Leetcode/blob/master/Solution/Roman%20to%20Integer.md)|Easy|
+|12|[Integer to Roman](https://leetcode.com/problems/integer-to-roman/description/)|[Java](https://github.com/lwy2016/Leetcode/blob/master/Solution/Integer%20to%20Roman.md)|Medium|
 |9|[Palindrome Number](https://leetcode.com/problems/palindrome-number/description/)|[Java](https://github.com/lwy2016/Leetcode/blob/master/Solution/Palindrome%20Number.md)|Easy|
 |7|[Reverse Integer](https://leetcode.com/problems/reverse-integer/description/)|[Java](https://github.com/lwy2016/Leetcode/blob/master/Solution/Reverse%20Integer.md)|Easy|
 |3|[Longest Substring Without Repeating Characters](https://leetcode.com/problems/longest-substring-without-repeating-characters/)|[Java](https://github.com/lwy2016/Leetcode/blob/master/Solution/LongestSubstringWithoutRepeatingCharacters.md)|Medium|
