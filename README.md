@@ -3,6 +3,7 @@
 
 | DescSorted | Title |Solution | Difficulty |
 | --- | ----- | ------ |  ------- |
+|15|[3Sum](https://leetcode.com/problems/3sum/description/)|[Java](https://github.com/lwy2016/Leetcode/blob/master/Solution/Three%20Sum.md)|Medium|
 |13|[Roamn to Integer](https://leetcode.com/problems/roman-to-integer/description/)|[Java](https://github.com/lwy2016/Leetcode/blob/master/Solution/Roman%20to%20Integer.md)|Easy|
 |12|[Integer to Roman](https://leetcode.com/problems/integer-to-roman/description/)|[Java](https://github.com/lwy2016/Leetcode/blob/master/Solution/Integer%20to%20Roman.md)|Medium|
 |9|[Palindrome Number](https://leetcode.com/problems/palindrome-number/description/)|[Java](https://github.com/lwy2016/Leetcode/blob/master/Solution/Palindrome%20Number.md)|Easy|
