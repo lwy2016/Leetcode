@@ -3,6 +3,7 @@
 
 | DescSorted | Title |Solution | Difficulty |
 | --- | ----- | ------ |  ------- |
+|18|[4Sum](https://leetcode.com/problems/3sum/description/)|[Java](https://github.com/lwy2016/Leetcode/blob/master/Solution/Four%20Sum.md)|Medium|
 |16|[3Sum Closest](https://leetcode.com/problems/3sum-closest/description/)|[Java](https://github.com/lwy2016/Leetcode/blob/master/Solution/Three%20Sum%20Closest.md)|Medium|
 |15|[3Sum](https://leetcode.com/problems/3sum/description/)|[Java](https://github.com/lwy2016/Leetcode/blob/master/Solution/Three%20Sum.md)|Medium|
 |13|[Roamn to Integer](https://leetcode.com/problems/roman-to-integer/description/)|[Java](https://github.com/lwy2016/Leetcode/blob/master/Solution/Roman%20to%20Integer.md)|Easy|
