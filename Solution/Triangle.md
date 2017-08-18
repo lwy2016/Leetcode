@@ -24,6 +24,8 @@ Solution:
 1. 状态方式的选取
 2. 状态转移方程
 
+![分析思路](http://7xnyvm.com1.z0.glb.clouddn.com/LeetCode-120.jpg)
+
 ```java
 public int minimumTotal(List<List<Integer>> triangle) {
     for (int i = triangle.size() - 2; i >= 0; --i){
