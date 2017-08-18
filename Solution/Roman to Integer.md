@@ -15,8 +15,37 @@ Solution:
 
 ```java
 public class Solution {
-    public int romanToInt(String s) {
+    public int romanToInt(String s){
+        if(s == ""){
+            return 0;
+        }
         
+        char[] c = s.toCharArray();
+        int res = 0;
+        if(s.length() == 1){
+            res = rTOi(c[0]);
+        } else {
+            res += rTOi(c[0]);
+            for (int i = 0; i < c.length-1; i++){
+                if(rTOi(c[i]) >= rTOi(c[i+1])){
+                    res += rTOi(c[i+1]);
+                } else {
+                    res = res + rTOi(c[i+1]) - 2 * rTOi(c[i]);
+                }
+            }
+        }
+        
+        return res;
+    }
+    public int rTOi(char c){
+        char[] roman = {'I','V','X','L','C','D','M'};
+        char[] romanInt = {1, 5, 10, 50, 100, 500, 1000};
+        for( int i = 0; i < roman.length; i++ ){
+            if(c == roman[i]){
+                return romanInt[i];
+            }
+        }
+        return 0;
     }
 }
 ```
