@@ -24,6 +24,9 @@ Solution:
 1. 状态方式的选取
 2. 状态转移方程
 
+设状态为 f (i; j )，表示从从位置 (i; j ) 出发，路径的最小和，则状态转移方程为
+f(i,j)=min{f(i+1,j),f(i+1,j+1)}+(i,j)
+
 ![分析思路](http://7xnyvm.com1.z0.glb.clouddn.com/LeetCode-120.jpg)
 
 ```java
