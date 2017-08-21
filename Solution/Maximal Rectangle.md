@@ -4,8 +4,8 @@ Given a 2D binary matrix filled with 0's and 1's, find the largest rectangle con
 
 For example, given the following matrix:
 
->1 0 1 0 0
-1 0 1 1 1
+>1 0 1 0 0 \n
+1 0 1 1 1 
 1 1 1 1 1
 1 0 0 1 0 
 
@@ -60,7 +60,6 @@ public static int largestRectangleArea(int[] height) {
         // 2.当height[i-1]>=height[i]时，即左侧大于右侧值时，说明左侧的数值高，p值需要向左回溯，直到所在的序号表示的值比当前序号i表示的值小，记下所在的序号给p
         lessFromLeft[i] = p;   
     }
-    System.out.println();
     for (int i = height.length - 2; i >= 0; i--) {  // 6个元素，循环5次比较，从倒数第二个元素往前比较
         // the current index is i 
         int p = i + 1;
