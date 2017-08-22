@@ -8,6 +8,9 @@
 |53|[Maximum Subarray](https://leetcode.com/problems/maximum-subarray/description/)|[Java](https://github.com/lwy2016/Leetcode/blob/master/Solution/Maximum%20Subarraylosest.md)|Easy|Dynamic Programming|
 |85|[Maximal Rectangle](https://leetcode.com/problems/maximal-rectangle/description/)|[Java](https://github.com/lwy2016/Leetcode/blob/master/Solution/Maximal%20Rectangle.md)|Hard|Dynamic Programming|
 |84|[Largest Rectangle in Histogram](https://leetcode.com/problems/largest-rectangle-in-histogram/description/)|[Java](https://github.com/lwy2016/Leetcode/blob/master/Solution/Largest%20Rectangle%20in%20Histogram.md)|Hard|Array|
+|26|[Remove Duplicates from Sorted Array](https://leetcode.com/problems/remove-duplicates-from-sorted-array/description/)|[Java](https://github.com/lwy2016/Leetcode/blob/master/Solution/Remove%20Duplicates%20from%20Sorted%20Array.md)||Array|
+|21|[Merge Two Sorted Lists](https://leetcode.com/problems/merge-two-sorted-lists/description/)|[Java](https://github.com/lwy2016/Leetcode/blob/master/Solution/Merge%20Two%20Sorted%20Lists.md)||LinkedList|
+|20|[Valid Parentheses](https://leetcode.com/problems/valid-parentheses/description/)|[Java](https://github.com/lwy2016/Leetcode/blob/master/Solution/Valid%20Parentheses.md)|Easy|Stack|
 |18|[4Sum](https://leetcode.com/problems/3sum/description/)|[Java](https://github.com/lwy2016/Leetcode/blob/master/Solution/Four%20Sum.md)|Medium|Array|
 |16|[3Sum Closest](https://leetcode.com/problems/3sum-closest/description/)|[Java](https://github.com/lwy2016/Leetcode/blob/master/Solution/Three%20Sum%20Closest.md)|Medium|Array|
 |15|[3Sum](https://leetcode.com/problems/3sum/description/)|[Java](https://github.com/lwy2016/Leetcode/blob/master/Solution/Three%20Sum.md)|Medium|Array|
