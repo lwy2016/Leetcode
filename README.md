@@ -4,6 +4,9 @@
 | DescSorted | Title | Solution | Difficulty | Type |
 | --- | ----- | :------: |  ------- | :----: |
 |132|[Palindrome Partitioning II](https://leetcode.com/problems/palindrome-partitioning-ii/description/)|[Java](https://github.com/lwy2016/Leetcode/blob/master/Solution/Palindrome%20Partitioning%20II.md)|Hard|Dynamic Programming|
+|123|[Best Time to Buy and Sell Stock III](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iii/description/)|[Java](https://github.com/lwy2016/Leetcode/blob/master/Solution/Best%20Time%20to%20Buy%20and%20Sell%20Stock%20III.md)|Hard|Array|
+|122|[Best Time to Buy and Sell Stock II](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/description/)|[Java](https://github.com/lwy2016/Leetcode/blob/master/Solution/Best%20Time%20to%20Buy%20and%20Sell%20Stock%20II.md)|Easy|Array|
+|121|[Best Time to Buy and Sell Stock](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/description/)|[Java](https://github.com/lwy2016/Leetcode/blob/master/Solution/Best%20Time%20to%20Buy%20and%20Sell%20Stock.md)|Easy|Array|
 |120|[Triangle](https://leetcode.com/problems/triangle/description/)|[Java](https://github.com/lwy2016/Leetcode/blob/master/Solution/Triangle.md)|Medium|Dynamic Programming|
 |53|[Maximum Subarray](https://leetcode.com/problems/maximum-subarray/description/)|[Java](https://github.com/lwy2016/Leetcode/blob/master/Solution/Maximum%20Subarraylosest.md)|Easy|Dynamic Programming|
 |85|[Maximal Rectangle](https://leetcode.com/problems/maximal-rectangle/description/)|[Java](https://github.com/lwy2016/Leetcode/blob/master/Solution/Maximal%20Rectangle.md)|Hard|Dynamic Programming|
@@ -13,6 +16,7 @@
 |26|[Remove Duplicates from Sorted Array](https://leetcode.com/problems/remove-duplicates-from-sorted-array/description/)|[Java](https://github.com/lwy2016/Leetcode/blob/master/Solution/Remove%20Duplicates%20from%20Sorted%20Array.md)|Easy|Array|
 |21|[Merge Two Sorted Lists](https://leetcode.com/problems/merge-two-sorted-lists/description/)|[Java](https://github.com/lwy2016/Leetcode/blob/master/Solution/Merge%20Two%20Sorted%20Lists.md)|Easy|LinkedList|
 |20|[Valid Parentheses](https://leetcode.com/problems/valid-parentheses/description/)|[Java](https://github.com/lwy2016/Leetcode/blob/master/Solution/Valid%20Parentheses.md)|Easy|Stack|
+|19|[Remove Nth Node From End of List](https://leetcode.com/problems/remove-nth-node-from-end-of-list/description/)|[Java](https://github.com/lwy2016/Leetcode/blob/master/Solution/Remove%20Nth%20Node%20From%20End%20of%20List.md)|Medium|LinkedList|
 |18|[4Sum](https://leetcode.com/problems/3sum/description/)|[Java](https://github.com/lwy2016/Leetcode/blob/master/Solution/Four%20Sum.md)|Medium|Array|
 |16|[3Sum Closest](https://leetcode.com/problems/3sum-closest/description/)|[Java](https://github.com/lwy2016/Leetcode/blob/master/Solution/Three%20Sum%20Closest.md)|Medium|Array|
 |15|[3Sum](https://leetcode.com/problems/3sum/description/)|[Java](https://github.com/lwy2016/Leetcode/blob/master/Solution/Three%20Sum.md)|Medium|Array|
