@@ -12,6 +12,7 @@
 |85|[Maximal Rectangle](https://leetcode.com/problems/maximal-rectangle/description/)|[Java](https://github.com/lwy2016/Leetcode/blob/master/Solution/Maximal%20Rectangle.md)|Hard|Dynamic Programming|
 |84|[Largest Rectangle in Histogram](https://leetcode.com/problems/largest-rectangle-in-histogram/description/)|[Java](https://github.com/lwy2016/Leetcode/blob/master/Solution/Largest%20Rectangle%20in%20Histogram.md)|Hard|Array|
 |80|[Remove Duplicates from Sorted Array II](https://leetcode.com/problems/remove-duplicates-from-sorted-array-ii/description/)|[Java](https://github.com/lwy2016/Leetcode/blob/master/Solution/Remove%20Duplicates%20from%20Sorted%20Array%20II.md)|Medium|Array|
+|38|[Count and Say](https://leetcode.com/problems/count-and-say/description/)|[Java]()|Easy|String|
 |32|[Longest Valid Parentheses](https://leetcode.com/problems/longest-valid-parentheses/description/)|[Java](https://github.com/lwy2016/Leetcode/blob/master/Solution/Longest%20Valid%20Parentheses.md)|Hard|Stack|
 |26|[Remove Duplicates from Sorted Array](https://leetcode.com/problems/remove-duplicates-from-sorted-array/description/)|[Java](https://github.com/lwy2016/Leetcode/blob/master/Solution/Remove%20Duplicates%20from%20Sorted%20Array.md)|Easy|Array|
 |21|[Merge Two Sorted Lists](https://leetcode.com/problems/merge-two-sorted-lists/description/)|[Java](https://github.com/lwy2016/Leetcode/blob/master/Solution/Merge%20Two%20Sorted%20Lists.md)|Easy|LinkedList|
