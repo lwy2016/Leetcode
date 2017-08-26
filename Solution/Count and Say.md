@@ -2,11 +2,11 @@ Description:
 
 The count-and-say sequence is the sequence of integers with the first five terms as following:
 
->1.     1
-2.     11
-3.     21
-4.     1211
-5.     111221
+> 1.     1
+> 2.     11
+> 3.     21
+> 4.     1211
+> 5.     111221
 
 1 is read off as "one 1" or 11.
 11 is read off as "two 1s" or 21.
@@ -22,12 +22,13 @@ Output: "1"
 
 Example 2:
 
-Input: 4
+>Input: 4
 Output: "1211"
 
 Solution:
 
 本题使用 **递归** 来做
+
 ![Count and Say](http://7xnyvm.com1.z0.glb.clouddn.com/LeetCode-38.jpg)
 
 ```java
