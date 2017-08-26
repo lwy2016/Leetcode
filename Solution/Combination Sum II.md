@@ -39,15 +39,17 @@ public List<List<Integer>> combinationSum2(int[] candidates, int target){
 public void getResult(List<List<Integer>> result, ArrayList<Integer> cur, int[] candidates, int target, int start){
 	if(target > 0){
 		// i的初始值为start
-		for (int i = start; i < candidates.length && candidates[i] <= target; i++){
+		for (int i = start; i < candidates.length && candidates[i] <= target; i++){  
+			//  去除重复
+			if(i < start && candidates[i] == candidates[i-1]){
+				continue;   // 使用continue
+			}
+
 			cur.add(candidates[i]);
 			getResult(result, cur, candidates, (target - candidates[i]), i + 1); // 改为i+1
 
 			cur.remove(cur.size() - 1);
-			//  去除重复
-			if(i < candidates.length && candidates[i] == candidates[i+1]){
-				i++;
-			}
+			
 		}
 	} else if(target == 0){
 		result.add(new ArrayList<Integer>(cur));
