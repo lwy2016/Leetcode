@@ -23,5 +23,17 @@ I限制了只能买卖一次。于是要尽可能在最低点买入最高点抛�
 如果prices[i] >= minPrice，则该天可能是最好的卖出时间，计算prices[i] - minPrice，并与当前的单笔最大利润比较更新。
 
 ```java
+public int maxPrice(int[] prices){
+	int max = 0, minPrice = prices[0];
 
+	for(int i = 1; i < prices.length; i++){
+		if(minPrice < prices[i]){
+			minPrice = prices[i];
+		} else {
+			max = Math.max(max, prices[i] - minPrice);
+		}
+	}
+
+	return max;
+}
 ```
