@@ -12,6 +12,7 @@
 |85|[Maximal Rectangle](https://leetcode.com/problems/maximal-rectangle/description/)|[Java](https://github.com/lwy2016/Leetcode/blob/master/Solution/Maximal%20Rectangle.md)|Hard|Dynamic Programming|
 |84|[Largest Rectangle in Histogram](https://leetcode.com/problems/largest-rectangle-in-histogram/description/)|[Java](https://github.com/lwy2016/Leetcode/blob/master/Solution/Largest%20Rectangle%20in%20Histogram.md)|Hard|Array|
 |80|[Remove Duplicates from Sorted Array II](https://leetcode.com/problems/remove-duplicates-from-sorted-array-ii/description/)|[Java](https://github.com/lwy2016/Leetcode/blob/master/Solution/Remove%20Duplicates%20from%20Sorted%20Array%20II.md)|Medium|Array|
+|41|[First Missing Positive](https://leetcode.com/problems/first-missing-positive/description/)|[Java](https://github.com/lwy2016/Leetcode/blob/master/Solution/First%20Missing%20Positive.md)|Hard|Array|
 |40|[Combination Sum II](https://leetcode.com/problems/combination-sum-ii/description/)|[Java](https://github.com/lwy2016/Leetcode/blob/master/Solution/Combination%20Sum%20II.md)|Medium|BackTracking|
 |39|[Combination Sum](https://leetcode.com/problems/combination-sum/description/)|[Java](https://github.com/lwy2016/Leetcode/blob/master/Solution/Combination%20Sum.md)|Medium|BackTracking|
 |38|[Count and Say](https://leetcode.com/problems/count-and-say/description/)|[Java](https://github.com/lwy2016/Leetcode/blob/master/Solution/Count%20and%20Say.md)|Easy|String|
