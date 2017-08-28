@@ -46,10 +46,11 @@ public void getResult(List<List<Integer>> result, ArrayList<Integer> cur, int[] 
 			}
 
 			cur.add(candidates[i]);
+			System.out.println("result-->"+result+", cur-->"+cur+", target-->"+(target-candidates[i])+", start-->"+start);
 			getResult(result, cur, candidates, (target - candidates[i]), i + 1); // 改为i+1
 
 			cur.remove(cur.size() - 1);
-			
+			System.out.println("---------"+cur+", target-->"+(target)+", i-->"+i);
 		}
 	} else if(target == 0){
 		result.add(new ArrayList<Integer>(cur));
