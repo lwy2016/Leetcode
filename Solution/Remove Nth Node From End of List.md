@@ -11,6 +11,9 @@ Given n will always be valid.
 Try to do this in one pass.
 
 Solution:
+
+双指针 Two Points
+
 LinkedList 一些容易犯的错误是：
 
 1. 越界：容易造成内存访问错误，比如调用了NULL->next。尤其对于空链表的特殊情况。
