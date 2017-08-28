@@ -16,6 +16,8 @@
 |40|[Combination Sum II](https://leetcode.com/problems/combination-sum-ii/description/)|[Java](https://github.com/lwy2016/Leetcode/blob/master/Solution/Combination%20Sum%20II.md)|Medium|BackTracking|
 |39|[Combination Sum](https://leetcode.com/problems/combination-sum/description/)|[Java](https://github.com/lwy2016/Leetcode/blob/master/Solution/Combination%20Sum.md)|Medium|BackTracking|
 |38|[Count and Say](https://leetcode.com/problems/count-and-say/description/)|[Java](https://github.com/lwy2016/Leetcode/blob/master/Solution/Count%20and%20Say.md)|Easy|String|
+|37|[Sudoku Solver](https://leetcode.com/problems/sudoku-solver/description/)|[Java](https://github.com/lwy2016/Leetcode/blob/master/Solution/Sudoku%20Solver.md)|Hard|Hash Table|
+|36|[Valid Sudoku](https://leetcode.com/problems/valid-sudoku/description/)|[Java](https://github.com/lwy2016/Leetcode/blob/master/Solution/Valid%20Sudoku.md)|Medium|Hash Table|
 |32|[Longest Valid Parentheses](https://leetcode.com/problems/longest-valid-parentheses/description/)|[Java](https://github.com/lwy2016/Leetcode/blob/master/Solution/Longest%20Valid%20Parentheses.md)|Hard|Stack|
 |26|[Remove Duplicates from Sorted Array](https://leetcode.com/problems/remove-duplicates-from-sorted-array/description/)|[Java](https://github.com/lwy2016/Leetcode/blob/master/Solution/Remove%20Duplicates%20from%20Sorted%20Array.md)|Easy|Array|
 |21|[Merge Two Sorted Lists](https://leetcode.com/problems/merge-two-sorted-lists/description/)|[Java](https://github.com/lwy2016/Leetcode/blob/master/Solution/Merge%20Two%20Sorted%20Lists.md)|Easy|LinkedList|
