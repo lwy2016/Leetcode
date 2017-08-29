@@ -19,6 +19,9 @@
 |37|[Sudoku Solver](https://leetcode.com/problems/sudoku-solver/description/)|[Java](https://github.com/lwy2016/Leetcode/blob/master/Solution/Sudoku%20Solver.md)|Hard|Hash Table|
 |36|[Valid Sudoku](https://leetcode.com/problems/valid-sudoku/description/)|[Java](https://github.com/lwy2016/Leetcode/blob/master/Solution/Valid%20Sudoku.md)|Medium|Hash Table|
 |32|[Longest Valid Parentheses](https://leetcode.com/problems/longest-valid-parentheses/description/)|[Java](https://github.com/lwy2016/Leetcode/blob/master/Solution/Longest%20Valid%20Parentheses.md)|Hard|Stack|
+|29|[Divide Two Integers](https://leetcode.com/problems/divide-two-integers/description/)|[Java](https://github.com/lwy2016/Leetcode/blob/master/Solution/Divide%20Two%20Integers.md)|Medium|Array|
+|28|[Implement strStr()](https://leetcode.com/problems/implement-strstr/description/)|[Java](https://github.com/lwy2016/Leetcode/blob/master/Solution/Implement%20strStr().md)|Easy|String|
+|27|[Remove Element](https://leetcode.com/problems/remove-element/description/)|[Java](https://github.com/lwy2016/Leetcode/blob/master/Solution/Remove%20Element.md)|Easy|Array|
 |26|[Remove Duplicates from Sorted Array](https://leetcode.com/problems/remove-duplicates-from-sorted-array/description/)|[Java](https://github.com/lwy2016/Leetcode/blob/master/Solution/Remove%20Duplicates%20from%20Sorted%20Array.md)|Easy|Array|
 |21|[Merge Two Sorted Lists](https://leetcode.com/problems/merge-two-sorted-lists/description/)|[Java](https://github.com/lwy2016/Leetcode/blob/master/Solution/Merge%20Two%20Sorted%20Lists.md)|Easy|LinkedList|
 |20|[Valid Parentheses](https://leetcode.com/problems/valid-parentheses/description/)|[Java](https://github.com/lwy2016/Leetcode/blob/master/Solution/Valid%20Parentheses.md)|Easy|Stack|
