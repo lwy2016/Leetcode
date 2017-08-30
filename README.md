@@ -18,6 +18,7 @@
 |38|[Count and Say](https://leetcode.com/problems/count-and-say/description/)|[Java](https://github.com/lwy2016/Leetcode/blob/master/Solution/Count%20and%20Say.md)|Easy|String|
 |37|[Sudoku Solver](https://leetcode.com/problems/sudoku-solver/description/)|[Java](https://github.com/lwy2016/Leetcode/blob/master/Solution/Sudoku%20Solver.md)|Hard|Hash Table|
 |36|[Valid Sudoku](https://leetcode.com/problems/valid-sudoku/description/)|[Java](https://github.com/lwy2016/Leetcode/blob/master/Solution/Valid%20Sudoku.md)|Medium|Hash Table|
+|35|[Search Insert Position](https://leetcode.com/problems/search-insert-position/description/)|[Java](https://github.com/lwy2016/Leetcode/blob/master/Solution/Search%20Insert%20Position.md)|Easy|Binary Search|
 |32|[Longest Valid Parentheses](https://leetcode.com/problems/longest-valid-parentheses/description/)|[Java](https://github.com/lwy2016/Leetcode/blob/master/Solution/Longest%20Valid%20Parentheses.md)|Hard|Stack|
 |29|[Divide Two Integers](https://leetcode.com/problems/divide-two-integers/description/)|[Java](https://github.com/lwy2016/Leetcode/blob/master/Solution/Divide%20Two%20Integers.md)|Medium|Array|
 |28|[Implement strStr()](https://leetcode.com/problems/implement-strstr/description/)|[Java](https://github.com/lwy2016/Leetcode/blob/master/Solution/Implement%20strStr().md)|Easy|String|
@@ -27,6 +28,7 @@
 |20|[Valid Parentheses](https://leetcode.com/problems/valid-parentheses/description/)|[Java](https://github.com/lwy2016/Leetcode/blob/master/Solution/Valid%20Parentheses.md)|Easy|Stack|
 |19|[Remove Nth Node From End of List](https://leetcode.com/problems/remove-nth-node-from-end-of-list/description/)|[Java](https://github.com/lwy2016/Leetcode/blob/master/Solution/Remove%20Nth%20Node%20From%20End%20of%20List.md)|Medium|LinkedList|
 |18|[4Sum](https://leetcode.com/problems/3sum/description/)|[Java](https://github.com/lwy2016/Leetcode/blob/master/Solution/Four%20Sum.md)|Medium|Array|
+|17|[Letter Combinations of a Phone Number](https://leetcode.com/problems/letter-combinations-of-a-phone-number/description/)|[Java](https://github.com/lwy2016/Leetcode/blob/master/Solution/Letter%20Combinations%20of%20a%20Phone%20Number.md)|Medium|backTracking|
 |16|[3Sum Closest](https://leetcode.com/problems/3sum-closest/description/)|[Java](https://github.com/lwy2016/Leetcode/blob/master/Solution/Three%20Sum%20Closest.md)|Medium|Array|
 |15|[3Sum](https://leetcode.com/problems/3sum/description/)|[Java](https://github.com/lwy2016/Leetcode/blob/master/Solution/Three%20Sum.md)|Medium|Array|
 |14|[Longest Common Prefix](https://leetcode.com/problems/longest-common-prefix/description/)|[Java](https://github.com/lwy2016/Leetcode/blob/master/Solution/Longest%20Common%20Prefix.md)|Easy|String|
