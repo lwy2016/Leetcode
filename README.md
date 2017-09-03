@@ -1,7 +1,6 @@
 ## Leetcode
 #### I described my way when I thinking how to resolve the question using Java.
 
-
 | DescSorted | Title | Solution | Difficulty | Type |
 | --- | ----- | :------: |  ------- | :----: |
 |132|[Palindrome Partitioning II](https://leetcode.com/problems/palindrome-partitioning-ii/description/)|[Java](https://github.com/lwy2016/Leetcode/blob/master/Solution/Palindrome%20Partitioning%20II.md)|Hard|Dynamic Programming|
