@@ -26,6 +26,6 @@ Solution:
     if(root.left == null) return minDepth(root.right) + 1;   // 左子树为空返回右子树的深度
     if(root.right == null) return minDepth(root.left) + 1;   // 右子树为空返回左子树的深度
 
-    return Math.min(minDepth(root.left), minDepth(root.right)) + 1;   //  左右子树都不为空，返回深度小的
+    return Math.min(minDepth(root.left), minDepth(root.right)) + 1;   // 左右子树都不为空，返回深度小的
  }
 ```
