@@ -15,6 +15,7 @@ Solution:
  */
 public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
     ListNode list = new ListNode(-1), cur = list;
+    ListNode list = new ListNode(-1), cur = list;   // 构造cur,list头节点
     while(l1 != null && l2 != null){
         if(l1.val < l2.val){
             cur.next = l1;
