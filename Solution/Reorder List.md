@@ -17,49 +17,49 @@ Solution:
 将A与反转后的链表B 合并
 
 ```java
-    public ListNode getMiddleListNode(ListNode head){  // slow,fast方法 获取到链表中间的节点
-        ListNode slow = head;
-        ListNode fast = head;
-        while(fast.next != null && fast.next.next != null){
-            slow = slow.next;
-            fast = fast.next.next;
-        }
-        return slow;
+public ListNode getMiddleListNode(ListNode head){  // slow,fast方法 获取到链表中间的节点
+    ListNode slow = head;
+    ListNode fast = head;
+    while(fast.next != null && fast.next.next != null){
+        slow = slow.next;
+        fast = fast.next.next;
     }
-    public ListNode ReverseListNode(ListNode head){
-        ListNode prev = null;
-        while(head != null){
-            ListNode next = head.next;
-            
-            head.next = prev;
-            prev = head;
-            
-            head = next;
-        }
-        return prev;
-    }
-    public void reorderList(ListNode head) {
-        if(head == null || head.next == null){
-            return ;
-        }
+    return slow;
+}
+public ListNode ReverseListNode(ListNode head){
+    ListNode prev = null;
+    while(head != null){
+        ListNode next = head.next;
         
-        ListNode middle = getMiddleListNode(head);
-        ListNode next = middle.next;
-        middle.next = null;
+        head.next = prev;
+        prev = head;
         
-        // 反转 
-        ListNode rHead = ReverseListNode(next);
-        // head， next分别是两部分
-        ListNode lHead = head;
-        while(lHead != null && rHead != null){
-            ListNode tempF = lHead.next;
-            ListNode tempN = rHead.next;
-            
-            rHead.next = lHead.next;
-            lHead.next = rHead;
-            
-            lHead = tempF;
-            rHead = tempN;
-        }
+        head = next;
     }
+    return prev;
+}
+public void reorderList(ListNode head) {
+    if(head == null || head.next == null){
+        return ;
+    }
+    
+    ListNode middle = getMiddleListNode(head);
+    ListNode next = middle.next;
+    middle.next = null;
+    
+    // 反转 
+    ListNode rHead = ReverseListNode(next);
+    // head， next分别是两部分
+    ListNode lHead = head;
+    while(lHead != null && rHead != null){
+        ListNode tempF = lHead.next;
+        ListNode tempN = rHead.next;
+        
+        rHead.next = lHead.next;
+        lHead.next = rHead;
+        
+        lHead = tempF;
+        rHead = tempN;
+    }
+}
 ```
