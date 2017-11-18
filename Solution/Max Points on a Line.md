@@ -13,7 +13,23 @@ Solution:
 1.x1 == x2时，为垂直连线，斜率是无穷大
 2.x1 == x2, y1 == y2 时两点重合
 
+使用HashMap<Double, Integer> 来存储斜率的个数，如果不将重复的斜率录入进去是要解决的重点:
+
+计算每一个点时，map都是new出来的新对象，res用来记录当前点某一斜率数量最多的次数
+samex初始为1，samep初始为0
+0/0编译不通过， (double)0/0 得到的值是NaN, java中NaN的定义：public static final double NaN = 0.0d / 0.0;
+所以当两点重合的时候，继续进行下面的计算而不是continue;在HashMap中的key值就是NaN
+
 ```java
+/**
+ * Definition for a point.
+ * class Point {
+ *     int x;
+ *     int y;
+ *     Point() { x = 0; y = 0; }
+ *     Point(int a, int b) { x = a; y = b; }
+ * }
+ */
 public int maxPoints(Point[] points) {
     if(points.length <= 0) return 0;
     if(points.length <= 2) return points.length;
@@ -24,13 +40,20 @@ public int maxPoints(Point[] points) {
         int samex = 1;   // 在同一条垂直线上的点 个数
         int samep = 0;   // 重合点 个数
         HashMap<Double, Integer> map = new HashMap<Double, Integer>();  // 斜率 double, 个数 int
+        /*  计算每一个点时，map都是new出来的新对象，res用来记录当前点某一斜率数量最多的次数
+            samex初始为1，samep初始为0
+            0/0编译不通过， (double)0/0 得到的值是NaN, java中NaN的定义：public static final double NaN = 0.0d / 0.0;
+            在HashMap中的key值就是NaN
+        */
         for(int j = 0; j < points.length; j++){  
-            if(i != j){
+            // 当i != j
+            if(i != j){  
                 if((points[j].x == points[i].x) && (points[j].y == points[i].y)) samep++;
                 if(points[j].x == points[i].x) {
                     samex++;
                     continue;   // 斜率为无穷大，继续下次循环
                 }
+                // 不论两点重合还是垂直相交，因为continue ，都不会执行后面的代码（第一个if成立，第二个if必成立）
                 double d = (double)(points[j].y - points[i].y) / (points[j].x - points[i].x);  // 转为double类型
                 if(map.containsKey(d)){
                     map.put(d, map.get(d) + 1);   // 斜率存在，+1
