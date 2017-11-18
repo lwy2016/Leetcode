@@ -39,17 +39,19 @@ O(nlogn)的排序算法有quick sort, heap sort, merge sort。对于链表排序
         return megerList(sortList(head), sortList(next));
     }
     ListNode megerList(ListNode l1, ListNode l2){
-        ListNode list = new ListNode(-1), cur = list;
+        ListNode dummy = new ListNode(-1);
+        ListNode list = dummy;
         while(l1 != null && l2 != null){
             if(l1.val < l2.val){
-                cur.next = l1;
+                list.next = l1;
                 l1 = l1.next;
             } else {
-                cur.next = l2;
+                list.next = l2;
                 l2 = l2.next;
             }
+            list = list.next;
         }
-        cur.next = (l1 != null) ? l1 : l2;
-        return list.next;
+        list.next = (l1 != null) ? l1 : l2;
+        return dummy.next;
     }
 ```
