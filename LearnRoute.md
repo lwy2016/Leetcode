@@ -8,7 +8,7 @@
 　　2. MapReduce 输入输出格式
 　　3. Mapper 和 Reducer 的功能
 　　4. MapReduce 的工作机制，Shuffle过程
-　　5. HDFS 工作原理，如何实现 HA
+　　5. HDFS 工作原理，如何实现 HA(High Availablity 高可用)
 　　6. 节点间通信机制
 　　7. DataNode 如何冗余备份
 　　8. Java 的引用类型有哪几种
