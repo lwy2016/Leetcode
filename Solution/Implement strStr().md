@@ -42,12 +42,16 @@ public int strStr(String haystack, String needle) {
 双指针 Two Points
 通过测试
 
+双指针算法，循环次数为两者长度之差，并且设置flag当第一匹配的时候就返回对应的index，出现不匹配的情况时，及时break掉，
 ```java
 public int strStr(String haystack, String needle) {
-    if(haystack == null || needle == null || needle.length()==0) 
+    if(haystack == null || needle == null || needle.length()==0){
         return 0;
-    if(needle.length()>haystack.length())  
+    } 
+    if(needle.length()>haystack.length()){
         return -1;  
+    } 
+
     for(int i = 0; i <= haystack.length() - needle.length(); i++){
         boolean successFlag = true; 
         for(int j = 0; j < needle.length(); j++){
@@ -56,8 +60,9 @@ public int strStr(String haystack, String needle) {
                 break;
             }
         }
-        if(successFlag)
+        if(successFlag){
             return i;
+        }
     }
     
     return -1;
