@@ -8,11 +8,14 @@ LeetCode解题报告：
 
 ##水平扫描
 
+假定数组中第一个字符串为 公共前缀
+当 A.indexOf(pre) != 0时，说明pre的长度过长，需要逐渐减少pre的长度，若长度为0，及时return，
 ```java
 public String longestCommonPrefix(String[] strs) {
     if(strs.length == 0) return "";
-    String prefix = strs[0];
+    String prefix = strs[0];   // 假定数组中第一个字符串为 公共前缀
     
+    // indexOf() 和空字符串比较，结果是0， 和它本身或前缀比较结果也是0， "abcdef".indexOf("ab")
     // 这里 "abc".indexOf("") = 0, "abc".indexOf("abc") = 0
     for(int i = 1; i < strs.length; i++){
         while(strs[i].indexOf(prefix) != 0){
