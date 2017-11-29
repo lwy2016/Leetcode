@@ -17,6 +17,8 @@ Solution:
 
 将每个词排序后，根据这个键值，找到哈希表中相应的列表，并添加进去
 
+先对某个单词转成字符数组进行排序，将排序后的结果转成字符串，作为map的key值，
+
 ```java
 public List<List<String>> groupAnagrams(String[] strs) {
     List<List<String>> res = new ArrayList<List<String>>();
@@ -38,7 +40,7 @@ public List<List<String>> groupAnagrams(String[] strs) {
     }
     for(String key : map.keySet()){
         List<String> cur = map.get(key);
-        Collections.sort(cur);   // 对List<String>进行排序
+        Collections.sort(cur);   // 对List<String>中的字符串进行排序
         res.add(cur);
     }
     return res;
