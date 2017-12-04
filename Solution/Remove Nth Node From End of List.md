@@ -91,3 +91,37 @@ public ListNode removeNthFromEnd(ListNode head, int n) {
     return dummy.next;
 }
 ```
+
+大概2个月之后，自己手撕代码，与上面的解法完全相同，想法很重要
+
+使用快慢指针解决此题，需要注意最后删除的是否为头节点。让快指针先走n步，直至快指针走到终点，找到需要删除节点之前的一个节点，改变node->next域即可
+```java
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode(int x) { val = x; }
+ * }
+ */
+public ListNode removeNthFromEnd(ListNode head, int n) {
+    if(head == null) return null;
+
+    ListNode dummy = new ListNode(-1);
+    dummy.next = head;
+
+    ListNode fast = dummy;
+    ListNode slow = dummy;
+
+    for (int i = 0; i < n; i++) {
+        fast = fast.next;
+    }
+    while (fast.next != null) {
+        fast = fast.next;
+        slow = slow.next;
+    }
+    slow.next = slow.next.next;
+
+    return dummy.next;
+}
+```
