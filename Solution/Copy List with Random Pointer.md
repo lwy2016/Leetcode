@@ -50,3 +50,56 @@ public RandomListNode copyRandomList(RandomListNode head) {
     return dummy.next;
 }
 ```
+
+
+间接使用哈希表
+
+可以通过链表原来结构中的 next 指针来替代 hash table 做哈希
+
+实际我们对链表进行了三次扫描，第一次扫描对每个结点进行复制，然后把复制出来的新节点接在原结点的 next 指针上，也就是让链表变成一个重复链表，就是新旧更替；第二次扫描中我们把旧结点的随机指针赋给新节点的随机指针，因为新结点都跟在旧结点的下一个，所以赋值比较简单，就是 node->next->random = node->random->next，其中 node->next 就是新结点，因为第一次扫描我们就是把新结点接在旧结点后面。现在我们把结点的随机指针都接好了，最后一次扫描我们把链表拆成两个，第一个还原原链表，而第二个就是我们要求的复制链表。因为现在链表是旧新更替，只要把每隔两个结点分别相连，对链表进行分割即可。
+
+```java
+/**
+ * Definition for singly-linked list with a random pointer.
+ * class RandomListNode {
+ *     int label;
+ *     RandomListNode next, random;
+ *     RandomListNode(int x) { this.label = x; }
+ * };
+ */
+public RandomListNode copyRandomList(RandomListNode head) {
+    if(head == null) return null;
+    
+    RandomListNode curr = head;
+    // step1 generate new list with node
+    while(curr != null) {
+        RandomListNode newNode = new RandomListNode(curr.label);
+        
+        newNode.next = curr.next;
+        curr.next = newNode;
+        
+        curr = curr.next.next;
+    }
+    // step2 copy random pointer
+    curr = head;
+    while (curr != null) {
+        if (curr.random != null) {
+            curr.next.random = curr.random.next;
+        }
+        curr = curr.next.next;
+    }
+    // step3 split original and new list
+    RandomListNode newHead = head.next;
+    curr = head;
+    while (curr != null) {
+        RandomListNode newNode = curr.next;
+        curr.next = curr.next.next;
+        curr = curr.next;
+        if (newNode.next != null) {
+            newNode.next = newNode.next.next;
+        }
+    }
+    
+    return newHead;
+}
+```
