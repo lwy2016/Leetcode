@@ -13,7 +13,7 @@ Your function should return length = 2, with the first two elements of nums bein
 
 Solution:
 
-双指针 Two Points
+单指针
 
 ```java
 public int removeElement(int[] nums, int val){
@@ -27,3 +27,23 @@ public int removeElement(int[] nums, int val){
     return cur;
 }
 ```
+
+双指针 Two Points
+
+头指针用于指示当前遍历的元素位置，尾指针则用于在当前元素与欲删除值相等时替换当前元素，两根指针相遇时返回尾指针索引——即删除元素后「新数组」的长度。
+i 表示 头指针， n 表示 尾指针
+
+```java
+public int removeElement(int[] nums, int val) {
+    int n = nums.length;
+    for (int i = 0; i < n; i++) {
+        if (val == nums[i]) {
+            nums[i] = nums[n - 1];
+            i--;   // 在遍历当前元素位置与预删除值相等时，i 需要自减1，因为for循环对i自增1,下一次循环继续判断当前位置是否与预删除值相等
+            n--;
+        }
+    }
+    return n;
+}
+```
+
