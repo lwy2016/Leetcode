@@ -107,7 +107,6 @@ public int[] twoSum(int[] nums, int target) {
 version4
 ```java
  public int[] twoSum(int[] nums, int target) {
-        int res[] = new int[2]; 
         
         HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
         
@@ -116,15 +115,14 @@ version4
         	if(null == n){                     // 没有，则存入
         		map.put(nums[i], i);
         	}
-        	n = map.get(target - nums[i]);     // 获得 target 与 该存入值的差值 在 map 中的位置
-        	if(null != n && n <i){             // n < i，用来保证返回的数组，前者比后者小
-        		res[0] = n + 1;
-        		res[1] = i + 1;
-        		return res;
+
+        	n = map.get(target - nums[i]);     // 获得 target 与 该存入值的差值 在 map 中的位置, 当前的值的坐标是 i, 且i的值大 
+        	if(null != n && n <i){             // n < i，用来保证返回的数组，前者比后者小 
+        		return new int[]{n, i};
         	}
         		
         }
-		return res;
+		return null;
     }
 ```
 1.先判断nums[i]是否存在于map中，若没存在则添加到map中，key表示查找的值，value表示key在数组中的顺序；
