@@ -122,7 +122,7 @@ version4
         	}
         		
         }
-		return null;
+        return null;
     }
 ```
 1.先判断nums[i]是否存在于map中，若没存在则添加到map中，key表示查找的值，value表示key在数组中的顺序；
