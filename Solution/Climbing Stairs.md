@@ -37,3 +37,18 @@ Solution:
         return climbStairs(n - 1) + climbStairs(n - 2);
     }
 ```
+
+递归太慢了， 那么就使用迭代
+
+```java
+    public int climbStairs(int n) {
+        int prev = 0;
+        int curr = 1;
+        for (int i = 1; i <= n; i++) {
+            int tmp = curr;
+            curr += prev;
+            prev = tmp;
+        }
+        return curr;
+    }
+```
