@@ -25,7 +25,7 @@ Solution:
         char[] t_array = t.toCharArray();
         int[] map = new int[256];
         int start = 0, end = 0;   // 头指针，尾指针
-        int min_length = Integer.MAX_VALUE, min_start = 0;   // 窗口大小，起点
+        int min_length = Integer.MAX_VALUE, min_start = 0;   // 窗口大小，最小窗口的起点
         int count = t_array.length;  // t的长度
 
         for(int i = 0; i < t_array.length; i++)
@@ -38,13 +38,13 @@ Solution:
             }
             map[s_array[end]]--;
             while(count == 0) {  //  完整包含一个了 T
-                if((end - start + 1) < min_length) {
+                if((end - start + 1) < min_length) {  // 当该窗口比原窗口还小的时候，更新最小窗口的起点和长度
                     min_length = end - start + 1;
                     min_start = start;
                 }
-                map[s_array[start]] ++;
+                map[s_array[start]]++;
                 if(map[s_array[start]] > 0) {
-                    count ++;
+                    count++;
                 }
                 start++;
             }
