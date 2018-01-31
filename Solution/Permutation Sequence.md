@@ -58,5 +58,28 @@ Time Limit Exceeded
 
 参照 Discuss 的代码思想
 ```java
-
+    public String getPermutation(int n, int k) {
+        List<Integer> nums = new ArrayList<Integer>();
+        int[] factorial = new int[n + 1];
+        StringBuilder sb = new StringBuilder();
+        
+        int sum = 1;
+        factorial[0] = 1;
+        for (int i = 1; i <= n; i++) {
+            sum *= i;
+            factorial[i] = sum;
+            nums.add(i);
+            // factorial[] = {1, 1, 2, 6, 24,...n!}
+            // nums = {1, 2, 3, 4}
+        }
+        k--;
+        for (int i = 1; i <= n; i++) {
+            int index = k / factorial[n - i];
+            sb.append(nums.get(index));
+            nums.remove(index);
+            k -= index * factorial[n - i];
+        }
+        
+        return sb.toString();
+    } 
 ```
