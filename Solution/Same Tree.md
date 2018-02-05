@@ -1,0 +1,77 @@
+Description:
+
+Given two binary trees, write a function to check if they are the same or not.
+
+Two binary trees are considered the same if they are structurally identical and the nodes have the same value.
+
+
+Example 1:
+
+Input:     1         1
+          / \       / \
+         2   3     2   3
+
+        [1,2,3],   [1,2,3]
+
+Output: true
+Example 2:
+
+Input:     1         1
+          /           \
+         2             2
+
+        [1,2],     [1,null,2]
+
+Output: false
+Example 3:
+
+Input:     1         1
+          / \       / \
+         2   1     1   2
+
+        [1,2,1],   [1,1,2]
+
+Output: false
+
+Solution:
+
+结构相同且对应的值相同，则是相同的树
+使用先序遍历，逐个排查
+
+使用两个栈
+
+```java
+    public boolean isSameTree(TreeNode p, TreeNode q) {
+        if (p == null && q == null) return true; 
+        if ((p == null && q != null) || (p != null && q == null)) return false;
+        
+        Deque<TreeNode> stackP = new ArrayDeque<TreeNode>();
+        Deque<TreeNode> stackQ = new ArrayDeque<TreeNode>();
+        
+        stackP.push(p);
+        stackQ.push(q);
+        
+        while (!stackP.isEmpty() && !stackQ.isEmpty()) {
+            TreeNode nodeP = stackP.pop();
+            TreeNode nodeQ = stackQ.pop();
+            
+            if (nodeP.val != nodeQ.val) return false;
+            // right不同时等于null 
+            if ((nodeP.right != null && nodeQ.right == null) || (nodeP.right == null && nodeQ.right != null)) return false;
+            // right同时不等于null
+            if (nodeP.right != null && nodeQ.right != null) {
+                stackP.push(nodeP.right);
+                stackQ.push(nodeQ.right);
+            }
+            // left不同时等于null 
+            if ((nodeP.left != null && nodeQ.left == null) || (nodeP.left == null && nodeQ.left != null)) return false;
+            if (nodeP.left != null && nodeQ.left != null) {
+                stackP.push(nodeP.left);
+                stackQ.push(nodeQ.left);
+            }
+        }
+        return true;
+    }
+```    
+
+其实可以使用一个栈来代替
