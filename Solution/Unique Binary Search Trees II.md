@@ -16,6 +16,7 @@ Solution:
 
 ```java
 public List<TreeNode> generateTrees(int n) {
+    if (n <= 0) return new ArrayList<TreeNode>();
     return genBST(1, n);
 }
 
