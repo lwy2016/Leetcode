@@ -74,4 +74,13 @@ Solution:
     }
 ```    
 
-其实可以使用一个栈来代替
+迭代版
+
+```java
+    public boolean isSameTree(TreeNode p, TreeNode q) {
+        if (p == null && q == null) return true;
+        if (p == null || q == null) return false;
+        
+        return p.val == q.val && isSameTree(p.left, p.left) && isSameTree(p.right, q.right);
+    }
+```

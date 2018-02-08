@@ -57,3 +57,17 @@ Solution:
 
 递归版
 
+```java
+    public boolean isSymmetric(TreeNode root) {
+        if (root == null) return true;
+        
+        return symmetric(root.left, root.right);
+    }
+    
+    private boolean symmetric(TreeNode p, TreeNode q) {
+        if (p == null && q == null) return true;
+        if (p == null || q == null) return false;
+        
+        return p.val == q.val && symmetric(p.left, p.right) && symmetric(p.right, q.left);
+    }
+```
