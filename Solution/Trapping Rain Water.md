@@ -9,7 +9,7 @@ Given [0,1,0,2,1,0,1,3,2,1,2,1], return 6.
 
 The above elevation map is represented by array [0,1,0,2,1,0,1,3,2,1,2,1]. In this case, 6 units of rain water (blue section) are being trapped. Thanks Marcos for contributing this image!
 
-Solution:
+Solution:，
 
 这道题比较直接的做法类似Longest Palindromic Substring中的第一种方法，对于每一个bar往两边扫描，找到它能承受的最大水量，然后累加起来即可。每次往两边扫的复杂度是O(n)，对于每个bar进行处理，所以复杂度是O(n^2)，空间复杂度是O(1)
 
