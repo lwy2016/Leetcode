@@ -8,7 +8,7 @@ Solution:
 
 ```java
 public double myPow(double x, int n){
-    if(n < 0) return power(x, -n);
+    if(n < 0) return 1 / power(x, -n);
     return power(x, n);
 }
 public double power(double x, int n){
