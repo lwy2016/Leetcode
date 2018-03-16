@@ -49,7 +49,7 @@ public ListNode reverseList(ListNode head) {
 }
 
 private ListNode reverse(ListNode head, ListNode prev) {
-    if (prev == null) return prev;
+    if (head == null) return prev;
 
     ListNode temp = head.next;
     head.next = prev;
