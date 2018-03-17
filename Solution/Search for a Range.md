@@ -52,3 +52,51 @@ Solution:
         return result;
     }
 ```
+
+容易理解的一版
+
+```
+public int[] searchRange(int[] nums, int target) {
+    int[] result = new int[]{-1, -1};
+    if (nums == null || nums.length == 0) return result;
+
+    int low = getFirst(nums, target);
+    int high = getLast(nums, target);
+
+    if (low >= nums.length || nums[low] != target) {
+        return result;
+    }
+
+    result[0] = low;
+    result[1] = high;
+    return result;
+}
+
+private int getFirst(int[] nums, int target) {
+    int start = 0, end = nums.length - 1;
+    
+    while (start <= end) {
+        int mid = (end - start) / 2 + start;
+        if (nums[mid] < target) {
+            start = mid + 1;
+        } else {   // 若中点==target时，end移向中点
+            end = mid - 1;
+        }
+    }
+    return start;
+}
+
+private int getLast(int[] nums, int target) {
+    int start = 0, end = nums.length - 1;
+    
+    while (start <= end) {
+        int mid = (end - start) / 2 + start;
+        if (nums[mid] > target) {
+            end = mid - 1;
+        } else {   // 若中点==target时，start移向中点
+            start = mid + 1;
+        }
+    }
+    return end;
+}
+```
