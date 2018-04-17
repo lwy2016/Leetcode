@@ -26,6 +26,21 @@ s1 = “12433” 和s2=”1233”;
  - 如果在 c 后面添加一个 d 则 f[i][j] = f[i][j - 1] + 1
  - 如果将 c 删除 则 f[i][j] = f[i - 1][j] + 1
 
+
+我们假定函数dist(str1, str2)表示字串str1转变到字串str2的编辑距离，那么对于下面3种极端情况，我们很容易给出解答（0表示空串）。
+
+dist(0, 0) = 0
+dist(0, s) = strlen(s)
+dist(s, 0) = strlen(s)
+对于一般的情况，dist(str1, str2)我们应该如何求解呢？
+
+假定我们现在正在求解dist(str1+char1, str2+char2)，也就是把"str1+char1"转变成"str2+char2"。在这个转变过称中，我们要分情况讨论：
+
+str1可以直接转变成str2。这时我们只要把char1转成char2就可以了（如果char1 != char2）。
+str1+char1可以直接转变成str2。这时我们处理的方式是插入char2。
+str1可以直接转成str2+char2。这时的情况是我们需要删除char1。
+　　综合上面三种情况，dist(str1+char1, str2+char2)应该是三者的最小值。 
+
 二维数组
 
 ```java
@@ -56,8 +71,3 @@ s1 = “12433” 和s2=”1233”;
         return f[m][n];
     }
 ```
-
-滚动数组
-```java
-```
-
