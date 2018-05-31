@@ -24,7 +24,7 @@ slow-fast方法
  * }
  */
 public ListNode detectCycle(ListNode head) {
-    while(head == null || head.next == null){
+    if (head == null || head.next == null){
         return null;
     }
     ListNode slow = head;
