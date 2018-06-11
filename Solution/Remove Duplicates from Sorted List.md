@@ -21,8 +21,8 @@ Solution:
  */
 public ListNode deleteDuplicates(ListNode head) {
     if(head == null) return null;
-    ListNode dummy = head;
-    ListNode list = dummy;
+    
+    ListNode list = head;
     
     while(list.next != null) {
         if(list.val == list.next.val) {
@@ -31,6 +31,6 @@ public ListNode deleteDuplicates(ListNode head) {
             list = list.next;
         }
     }
-    return dummy;
+    return head;
 }
 ```
