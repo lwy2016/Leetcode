@@ -33,9 +33,8 @@ public int maxProfit(int[] prices) {
             minPrice = prices[i];
         } else {
             maxLeft = Math.max(maxLeft, prices[i] - minPrice);
-            
-            leftPrefix[i] = maxLeft;
         }
+        leftPrefix[i] = maxLeft;
     }
     
     int res = 0;

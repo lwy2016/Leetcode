@@ -61,3 +61,61 @@ public static int largestRectangleArea(int[] heights) {
     return maxArea;
 }
 ```
+
+
+```
+public int largestRectangleArea(int[] heights) {
+        int L = heights.length;
+        if(L == 0) return 0;
+        
+        int[] left = new int[L];
+        int[] right = new int[L];
+        
+        left[0] = -1;
+        right[L - 1] = L;
+        
+        for(int i=1; i < L; i++){
+            int p = i - 1;
+            while(p >= 0 && heights[p] >= heights[i]){
+                p = left[p];
+            }
+            left[i] = p;
+        }
+        for(int i = L - 2; i >= 0; i--){
+            int p = i + 1;
+            while(p < L && heights[p] >= heights[i]){
+                p = right[p];
+            }
+            right[i] = p;
+        }
+        int res = 0;
+        for(int i = 0; i < L; i++){
+            res = Math.max(res, heights[i] * (right[i] - left[i] - 1));
+        }
+        return res;
+    }
+```
+
+使用栈
+```
+public int largestRectangleArea(int[] heights) {
+        Stack<Integer> stack = new Stack<Integer>();
+        if (heights.length == 0) return 0;
+        
+        int[] h = new int[heights.length + 1];
+        h = Arrays.copyOf(heights, heights.length + 1);
+        
+        int i = 0;
+        int max = 0;
+        while (i < h.length) {
+            if (stack.isEmpty() || h[i] > h[stack.peek()]) {
+                stack.push(i++);
+            } else {
+                int t = stack.pop();
+                max = Math.max(max, h[t] * (stack.isEmpty() ? i : (i - stack.peek() - 1)));
+            }
+        }
+        
+        return max;
+    }
+```

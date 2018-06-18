@@ -78,3 +78,49 @@ public static int largestRectangleArea(int[] height) {
     return maxArea;
 }
 ```
+
+使用栈
+重要的一点是 生成柱状图的规则，如果改列某层为0，那么置为0，如果为1，该将上层的1的个数给他
+
+```
+public int maximalRectangle(char matrix[][]){
+    if (matrix == null || matrix.length == 0) return 0;
+    
+    int row = matrix.length;
+    int col = matrix[0].length;
+    int[] histogram = new int[col];
+    int max = 0;
+    
+    for (int i = 0; i < row; i++) {
+        for (int j = 0; j < col; j++) {
+            // 柱状图生成规则
+            histogram[j] = matrix[i][j] == '1' ? histogram[j] + 1 : 0;
+        }   
+        
+        max = Math.max(max, maxArea(histogram));
+    }
+    
+    return max;
+}
+
+public int maxArea(int[] nums) {
+    Stack<Integer> stack = new Stack<Integer>();
+    if (nums.length == 0) return 0;
+    
+    int[] h = new int[nums.length + 1];
+    h = Arrays.copyOf(nums, nums.length + 1);
+    
+    int i = 0;
+    int max = 0;
+    while (i < h.length) {
+        if (stack.isEmpty() || h[i] > h[stack.peek()]) {
+            stack.push(i++);
+        } else {
+            int t = stack.pop();
+            max = Math.max(max, h[t] * (stack.isEmpty() ? i : (i - stack.peek() - 1)));
+        }
+    }
+    
+    return max;
+}
+```

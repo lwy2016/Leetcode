@@ -58,7 +58,6 @@ public List<String> generateParenthesis(int n) {
             } else {
                 if (!stack.isEmpty() && '(' == stack.pop()) {
                     count--;
-                    continue;
                 } else {
                     return false;
                 }

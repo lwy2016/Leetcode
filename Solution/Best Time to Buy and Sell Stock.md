@@ -27,7 +27,7 @@ public int maxPrice(int[] prices){
 	int max = 0, minPrice = prices[0];
 
 	for(int i = 1; i < prices.length; i++){
-		if(minPrice < prices[i]){
+		if(prices[i] < minPrice){
 			minPrice = prices[i];
 		} else {
 			max = Math.max(max, prices[i] - minPrice);
