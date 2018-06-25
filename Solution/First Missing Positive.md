@@ -24,7 +24,6 @@ Solution:
 public int firstMissingPositive(int[] nums){
     int n = nums.length;
     int i = 0;
-    int j = 0;
     while(i < n){
         // 条件 1.2.3
         if(nums[i] > 0 && nums[i] <= n && nums[i] != i+1 && nums[nums[i] - 1] != nums[i]){  // 满足条件时，仍计算i位置的数字
@@ -33,11 +32,9 @@ public int firstMissingPositive(int[] nums){
             nums[i] = temp;
             // 反过来 int temp = nums[i]; nums[i] = nums[nums[i] - 1]; nums[nums[i - 1]] = temp; 第三段nums[i]已不再是之前的值
 
-            j = i;
         } else {   // 不满足条件时，i才+1
             i++;
         }
-        System.out.println(Arrays.toString(nums)+ ", j-->"+j +", i-->"+i );
     }
     for(i = 0; i < n; i++){
         if(nums[i] != i + 1){
@@ -47,14 +44,24 @@ public int firstMissingPositive(int[] nums){
     return n + 1;
 }
 ```
-以 [3,4,-1,1]为例，输出为
+
+上面的代码等价于
 ```
-[-1, 4, 3, 1], j-->0, i-->0
-[-1, 4, 3, 1], j-->0, i-->1
-[-1, 1, 3, 4], j-->1, i-->1
-[1, -1, 3, 4], j-->1, i-->1
-[1, -1, 3, 4], j-->1, i-->2
-[1, -1, 3, 4], j-->1, i-->3
-[1, -1, 3, 4], j-->1, i-->4
+public int firstMissingPositive(int[] nums){
+    int n = nums.length;
+
+    for (int i = 0; i < n; i++) {
+        while(nums[i] > 0 && nums[i] <= n && nums[i] != i+1 && nums[nums[i] - 1] != nums[i]){  // 满足条件时，仍计算i位置的数字
+            int temp = nums[nums[i] - 1];   
+            nums[nums[i] - 1] = nums[i];
+            nums[i] = temp;
+        }
+    }
+    for(int i = 0; i < n; i++){
+        if(nums[i] != i + 1){
+            return i + 1;
+        }
+    }
+    return n + 1;
+}
 ```
-j 表示 当前 nums[i] 的位置， 

@@ -41,7 +41,7 @@ public void getResult(List<List<Integer>> result, ArrayList<Integer> cur, int[] 
 		// i的初始值为start
 		for (int i = start; i < candidates.length && candidates[i] <= target; i++){  
 			//  去除重复
-			if(i < start && candidates[i] == candidates[i-1]){
+			if(i > start && candidates[i] == candidates[i-1]){
 				continue;   // 使用continue
 			}
 
