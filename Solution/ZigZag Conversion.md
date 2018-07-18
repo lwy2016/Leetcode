@@ -1,0 +1,66 @@
+Description:
+
+The string "PAYPALISHIRING" is written in a zigzag pattern on a given number of rows like this: (you may want to display this pattern in a fixed font for better legibility)
+
+P   A   H   N
+A P L S I I G
+Y   I   R
+And then read line by line: "PAHNAPLSIIGYIR"
+
+Write the code that will take a string and make this conversion given a number of rows:
+
+string convert(string s, int numRows);
+Example 1:
+
+Input: s = "PAYPALISHIRING", numRows = 3
+Output: "PAHNAPLSIIGYIR"
+Example 2:
+
+Input: s = "PAYPALISHIRING", numRows = 4
+Output: "PINALSIGYAHRPI"
+Explanation:
+
+P     I    N
+A   L S  I G
+Y A   H R
+P     I 
+
+Solution:
+
+n = numRows 
+
+        1                           2n-1                         4n-3
+        2                     2n-2  2n                    4n-4   4n-2
+        3               2n-3        2n+1              4n-5       .
+        .           .               .               .            .
+        .       n+2                 .           3n               .
+        n-1 n+1                     3n-3    3n-1                 5n-5
+        n                           3n-2                         5n-4
+
+
+所有行的重复周期都是 2 * n - 2
+对于首行和末行之间的行，还会额外重复一次，重复的这一次距离本周期起始字符的距离是 2 * nRows - 2 * i
+
+```
+public String convert(String s, int numRows) {
+	int len = s.length();
+	if (len == 0 || numRows == 1) return s;
+
+	StringBuilder sb = new StringBuilder();
+	int circle = 2 * n - 2;
+	for (int i = 0; i < numRows; i++) {
+		for (int j = i; j < len; j += circle) {
+			sb.append(s.charAt(j));   // 周期第一列
+
+			// 非首行和尾行 还要加一个，重复的这一个距离本周期起始字符的距离是 2*numRows - (i+1)*2 
+			if (i > 0 && i < numRows - 1) {
+				int t = j + circle - 2 * i;
+				if (t < len) { // 合法,没越界
+					sb.append(s.charAt(t));
+				}
+			}
+		}
+	}
+	return sb.toString();
+}
+```
