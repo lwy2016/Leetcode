@@ -27,9 +27,9 @@ public boolean searchMatrix(int[][] matrix, int target) {
     int n = matrix[0].length;
     
     int first = 0;
-    int last = m * n;
+    int last = m * n - 1;
     
-    while (first < last) {
+    while (first <= last) {
         int mid = first + (last - first) / 2;
         int value = matrix[mid / n][mid % n];
         
@@ -38,7 +38,7 @@ public boolean searchMatrix(int[][] matrix, int target) {
         } else if (value < target) {
             first = mid + 1;
         } else {
-            last = mid;
+            last = mid - 1;
         }
     }
     

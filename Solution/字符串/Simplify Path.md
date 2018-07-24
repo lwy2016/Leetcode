@@ -14,7 +14,7 @@ Solution:
 public String simplifyPath(String path) {
     Deque<String> stack = new LinkedList<String>();
     
-    Set<String> skip = new HashSet<>(Arrays.asList("..", ",", ""));
+    Set<String> skip = new HashSet<>(Arrays.asList("..", ".", ""));
 
     for (String dir : path.split("/")) {
         if(dir.equals("..") && !stack.isEmpty()) {
