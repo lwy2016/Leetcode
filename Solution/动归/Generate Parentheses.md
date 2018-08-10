@@ -50,7 +50,7 @@ public List<String> generateParenthesis(int n) {
     
     private boolean checkValid(List<Character> list) {
         Stack<Character> stack = new Stack<Character>();
-        int count = 0;
+        int count = 0;  
         for (char c : list) {
             if (c == '(') {
                 stack.push(c);
@@ -67,4 +67,22 @@ public List<String> generateParenthesis(int n) {
         
         return true;
     } 
+-------------------------
+    // count 不需要
+    public boolean checkValid(List<Character> list) {
+        Deque<Character> stack = new ArrayDeque<Character>();
+        for (int i = 0; i < list.size(); i++) {
+            if (list.get(i) == '(') {
+                stack.push('(');
+            } else if (list.get(i) == ')'){
+                if(!stack.isEmpty() && stack.peek() == '(') {
+                    stack.pop();
+                } else {
+                    return false;
+                }
+            }
+        }
+        
+        return stack.size() == 0 ? true : false;
+    }
 ```

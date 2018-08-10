@@ -26,7 +26,7 @@ I限制了只能买卖一次。于是要尽可能在最低点买入最高点抛�
 public int maxPrice(int[] prices){
 	int max = 0, minPrice = prices[0];
 
-	for(int i = 1; i < prices.length; i++){
+	for(int i = 0; i < prices.length; i++){
 		if(prices[i] < minPrice){
 			minPrice = prices[i];
 		} else {

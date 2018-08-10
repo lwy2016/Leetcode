@@ -22,10 +22,10 @@ Solution:
         int n = grid[0].length;
         
         int[] f = new int[n];
-        f[0] = 0;
+        f[0] = grid[0][0];
         // 初始值 是 Integer.MAX_VALUE 因为后面用了min函数
         for (int i = 1; i < n; i++) {
-            f[i] = Integer.MAX_VALUE;
+            f[j] = grid[0][j] + f[j - 1];
         }
         for (int i = 0; i < m; i++) {
             f[0] += grid[i][0];
@@ -46,6 +46,7 @@ pubic int minPathSum(int[][] grid) {
 
     int[][] f = new int[m][n];
     f[0][0] = grid[0][0];
+    
     for (int i = 1; i < m; i++) {
         f[i][0] = f[i - 1][0] + grid[i][0];
     }

@@ -18,7 +18,7 @@ public int maxProfit(int[] prices) {
     if(prices.length == 0) return 0;
     int count = 0, price = prices[0];
     
-    for(int i = 1; i < prices.length; i++){
+    for(int i = 0; i < prices.length; i++){
         if(price > prices[i]){
             price = prices[i];
         } else {

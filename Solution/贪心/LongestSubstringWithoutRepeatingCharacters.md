@@ -8,25 +8,25 @@ Analyze:
 
 ```java
 public int lengthOfLongestSubstring(String s) {
-        // 用ASCII表示字符，从空格到z一共有128个
-        // last[]数组下标表示字符，元素表示字符在字符串中出现的位置
-        int last[] = new int[128];
-        // start表示重复出现的字符的下一个位置
-        int start = 0;
-        int maxLen = 0; 
-        // 将last[]所有值赋值为1
-        for (int i = 0;i < 128 ;i++ ) {
-            last[i] = -1;
-        }
-
-        for (int i = 0; i < s.length() ; i++) {
-            if(last[s.charAt(i)] >= start){  // 当出现重复字符时
-                // 更新最大子串长度和重复出现的字符的下一位置
-                maxLen = Math.max(i - start, maxLen);
-                start = last[s.charAt(i)] + 1;
-            }
-            last[s.charAt(i)] = i;   // 记录或更新字符出现的位置
-        }
-        return Math.max(s.length() - start, maxLen);
+    // 用ASCII表示字符，从空格到z一共有128个
+    // last[]数组下标表示字符，元素表示字符在字符串中出现的位置
+    int last[] = new int[128];
+    // start表示重复出现的字符的下一个位置
+    int start = 0;
+    int maxLen = 0; 
+    // 将last[]所有值赋值为1
+    for (int i = 0;i < 128 ;i++ ) {
+        last[i] = -1;
     }
-    ```
+
+    for (int i = 0; i < s.length() ; i++) {
+        if(last[s.charAt(i)] >= start){  // 当出现重复字符时
+            // 更新最大子串长度和重复出现的字符的下一位置
+            maxLen = Math.max(i - start, maxLen);
+            start = last[s.charAt(i)] + 1;
+        }
+        last[s.charAt(i)] = i;   // 记录或更新字符出现的位置
+    }
+    return Math.max(s.length() - start, maxLen);
+}
+```

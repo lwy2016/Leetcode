@@ -28,7 +28,7 @@ public int maxProfit(int[] prices) {
     int minPrice = prices[0], maxLeft = 0;
     int[] leftPrefix = new int[L];
     
-    for(int i = 1; i < L; i++){
+    for(int i = 0; i < L; i++){
         if(minPrice > prices[i]){
             minPrice = prices[i];
         } else {
@@ -39,7 +39,7 @@ public int maxProfit(int[] prices) {
     
     int res = 0;
     int maxPrice = prices[L-1], maxRight = 0;
-    for(int i = L - 2; i >= 0; i--){
+    for(int i = L - 1; i >= 0; i--){
         if(maxPrice < prices[i]){
             maxPrice = prices[i];
         } else {

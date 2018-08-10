@@ -10,6 +10,28 @@ Solution:
 f=max(f+A[i],A[i]);//对于数组里的一个整数，它只有两种 选择：1、加入之前的 SubArray；2. 自己另起一个 
 
 ![分析思路](http://7xnyvm.com1.z0.glb.clouddn.com/LeetCode-53.jpg)
+
+
+手撕
+```java
+public int maxSubArray(int[] nums) {
+    if (nums == null || nums.length == 0) return 0; 
+    
+    int max = nums[0];
+    int f = 0;
+    ;
+    
+
+    for (int i = 0; i < nums.length; i++) {
+        f = Math.max(f + nums[i], nums[i]);
+        max = Math.max(max, f);
+    }
+
+    return max;
+}
+```
+
+
 ```java
 public int maxSubArray(int[] nums){
     int f = 0, max = nums[0];

@@ -9,6 +9,30 @@ Your algorithm should use only constant space. You may not modify the values in 
 
 Solution:
 
+
+手撕如下：
+```java
+public ListNode swapPairs(ListNode head) {
+    if (head == null) return null;
+    
+    ListNode dummy = new ListNode(-1);
+    dummy.next = head;
+    ListNode list = dummy;
+    
+    while (list.next != null && list.next.next != null) {
+        ListNode temp = list.next;
+        
+        list.next = temp.next;
+        temp.next = temp.next.next;
+        list.next.next = temp;
+        
+        list = list.next.next;
+    }
+    
+    return dummy.next;
+}
+```
+
 迭代解法：
 
 类似逆转单链表，只不过一次需要处理两个节点，注意对最后没有进行交换节点的处理
