@@ -46,7 +46,7 @@ public int firstMissingPositive(int[] nums){
 ```
 
 上面的代码等价于
-```
+```java
 public int firstMissingPositive(int[] nums){
     int n = nums.length;
 
