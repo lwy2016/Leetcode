@@ -60,7 +60,7 @@ public void quickSort(int[] nums, int left, int right) {
     quickSort(nums, pivot + 1, right);
 }
 
-public void helper(int[] nums, int left, int right) {
+public int helper(int[] nums, int left, int right) {
     int pivot_value = nums[left];
 
     int l = left + 1;
@@ -68,7 +68,7 @@ public void helper(int[] nums, int left, int right) {
 
     while (l <= r) {
         while (l <= r && nums[l] < pivot_value) l++;
-        while (l <= r && nums[l] >= pivot_value) r--;
+        while (l <= r && nums[r] >= pivot_value) r--;
 
         if (l > r) break;
         int temp = nums[l];
@@ -153,6 +153,31 @@ public class Singleton {
 
     public static final Singleton getInstance() {
         return SingletonHolder.INSTANCE;
+    }
+}
+
+汉诺塔
+https://www.kancloud.cn/freya001/leetcode/277804
+实现这个算法分为三个步骤：
+1. 把 n - 1 个盘子 由A移到B
+2. 把 第 n 个盘子 由A移到C
+3. 把 n - 1 个盘子 由B移到C
+(1)中间的一步是把最大的一个盘子由A移到C上去；
+(2)中间一步之上可以看成把A上n-1个盘子通过借助辅助塔（C塔）移到了B上，
+(3)中间一步之下可以看成把B上n-1个盘子通过借助辅助塔（A塔）移到了C上；
+
+
+static int m = 0;
+public static void move(int disk, char M, char N) {
+    System.out.println("第" + (++m) + "次移动: 把 " + disk + " 号圆盘从 " + M + " -> 移到 -> " + N);
+}
+public static void hanoi(int n, char A, char B, char C) {
+    if (n == 1) {
+        move(1, A, C);
+    } else {
+        hanoi(n - 1, A, C, B);
+        move(n, A, C);
+        hanoi(n - 1, B, A, C);
     }
 }
 
@@ -244,6 +269,8 @@ IndexOutofBoundsException   数组越界异常
 IllegalArgumentException    既然是继承就不得不考虑final的问题。我们知道final类型不能有子类，所以CGLIB不能代理final类型,否则异常
 ArithmeticException         分母是0
 ClassNotFoundException      Class.forName("类的全限定名")时，catch中
+ConcurrentModificationException  fail-fast机制 当某个线程遍历list的过程中，list的内容被另一个线程改变了，就会抛出该异常
+
 
 ---CheckedException
 ClassNotFoundException   
