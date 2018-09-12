@@ -27,7 +27,7 @@ public String multiply(String num1, String num2) {
             // 两个指针指向生成的两位数在数组中的位置
             int pos1 = i + j;       // 十位
             int pos2 = i + j + 1;   // 个位
-            multiply += arr[pos1];  // 两位数加上原数组中对应到两位数个位上的数字
+            multiply += arr[pos2];  // 两位数加上原数组中对应到两位数个位上的数字
             arr[pos1] += multiply / 10;     // 两位数十位要加上原数组对应位置上的数字
             arr[pos2] = multiply % 10;      // 两位数的个位已事先加上了原数组在对应位置上的数字
         }
