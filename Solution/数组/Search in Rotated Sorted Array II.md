@@ -20,36 +20,32 @@ Solution:
 
 ```java
     public boolean search(int[] nums, int target) { 
-        int start = 0, end = nums.length;
+        if (nums == null || nums.length == 0) return false;
+        int start = 0, end = nums.length - 1;
         
-        while (start != end) {
-            int mid = start + (end - start) / 2;
+        while (start <= end ) {
+            int mid = (end - start) / 2 + start;
             
             if (nums[mid] == target) {
                 return true;
             }
-            
             if (nums[mid] > nums[start]) {
-                // case1: numbers between start and mid are sorted
-                // nums[start] <= target < nums[mid]
                 if (nums[start] <= target && target < nums[mid]) {
-                    end = mid;
+                    end = mid - 1;
                 } else {
                     start = mid + 1;
                 }
-            } else if (nums[start] > nums[mid]) {
-                // case2: numbers between mid and end are sorted
-                // nums[mid] < target <= nums[end - 1]
-                if (nums[mid] < target && target <= nums[end - 1]) {
+            } else if (nums[mid] < nums[start]) {
+                if (nums[mid] < target && target <= nums[end]) {
                     start = mid + 1;
                 } else {
-                    end = mid;
+                    end = mid - 1;
                 }
             } else {
-                // case3: A[mid] == target
                 start++;
             }
         }
+        
         return false;
     }
 ```

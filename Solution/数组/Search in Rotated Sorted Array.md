@@ -19,9 +19,9 @@ Solution:
 ```java
     public int search(int[] nums, int target) {
         if (nums == null || nums.length == 0) return -1;
-        int start = 0, end = nums.length;
+        int start = 0, end = nums.length - 1;
         
-        while (start != end) {
+        while (start <= end) {
             int mid = start + (end - start) / 2; 
             
             if (nums[mid] == target) {
@@ -31,17 +31,17 @@ Solution:
                 // case1: numbers between start and mid are sorted
                 // nums[start] <= target < nums[mid]
                 if (nums[start] <= target && target < nums[mid]) {
-                    end = mid;
+                    end = mid - 1;
                 } else {
                     start = mid + 1;
                 }
             } else {
                 // case2: numbers between mid and end are sorted
                 // nums[mid] < target <= nums[end - 1]
-                if (nums[mid] < target && target <= nums[end - 1]) {
+                if (nums[mid] < target && target <= nums[end]) {
                     start = mid + 1;
                 } else {
-                    end = mid;
+                    end = mid - 1;
                 }
             }
         }
