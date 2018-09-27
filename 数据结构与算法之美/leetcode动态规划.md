@@ -13,3 +13,7 @@
 
 ## Medium部分 
 338. Counting Bits
+413. Arithmetic Slices
+647. Palindromic Substrings
+712. Minimum ASCII Delete Sum for Two Strings
+646. Maximum Length of Pair Chain
