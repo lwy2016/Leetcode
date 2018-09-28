@@ -17,3 +17,4 @@
 647. Palindromic Substrings
 712. Minimum ASCII Delete Sum for Two Strings
 646. Maximum Length of Pair Chain
+650. 2 Keys Keyboard
