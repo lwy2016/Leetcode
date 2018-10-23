@@ -79,7 +79,7 @@ public int helper(int[] nums, int left, int right) {
     nums[left] = nums[r];
     nums[r] = t;
 
-    return r;
+    return r; 
 }
 
 
