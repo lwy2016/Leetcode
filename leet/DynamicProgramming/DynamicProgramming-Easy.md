@@ -1,11 +1,11 @@
 # DynamicProgramming-Easy
 
-121. Best Time to Buy and Sell Stock
-746. Min Cost Climbing Stairs
-70.  Climbing Stairs
-53.  Maximum Subarray
-198. House Robber
-303. Range Sum Query - Immutable
+-121. Best Time to Buy and Sell Stock
+-746. Min Cost Climbing Stairs
+-70.  Climbing Stairs
+-53.  Maximum Subarray
+-198. House Robber
+-303. Range Sum Query - Immutable
 
 
 ## 121. Best Time to Buy and Sell Stock
@@ -107,24 +107,24 @@ Solution:
 爬楼梯，每次爬一个台阶或二个台阶，爬到每个台阶有一定的花费值，求爬完所有台阶用的最小的花费是多少
 
 1. 用一个辅助数组dp[]记录跳到当前位置所需要的最小花费值，长度为cost.length+1
-对于f[0]，爬上楼梯的最小体力就是它本身cost[0]
-对于f[1]，爬上楼梯的最小体力就是它本身cost[1]
-对于f[i]，就是f[i-1]，f[i-2]的较小者与cost[i]的和
-所以动态规划方程为: f[i]=min(f[i-1], f[i-2])+cost[i]
+对于dp[0]，爬上楼梯的最小体力就是它本身cost[0]
+对于dp[1]，爬上楼梯的最小体力就是它本身cost[1]
+对于dp[i]，就是dp[i-1]，dp[i-2]的较小者与cost[i]的和
+所以动态规划方程为: dp[i]=min(dp[i-1], dp[i-2])+cost[i]
 
 ```java 
 public int minCostClimbingStairs(int[] cost) {
 	if (cost == null || cost.length < 2) return 0;
 
-	int[] f = new int[cost.length + 1];
-	f[0] = cost[0];
-	f[1] = cost[1];
+	int[] dp = new int[cost.length + 1];
+	dp[0] = cost[0];
+	dp[1] = cost[1];
 
 	for (int i = 2; i <= cost.length; i++) {
-		f[i] = Math.min(f[i - 1], f[i - 2]) + (i == cost.length ? 0 : cost[i]);
+		dp[i] = Math.min(dp[i - 1], dp[i - 2]) + (i == cost.length ? 0 : cost[i]);
 	}
 
-	return f[cost.length];
+	return dp[cost.length];
 }
 ```
 cost = [1, 100, 1, 1, 1, 100, 1, 1, 100, 1]
@@ -335,7 +335,7 @@ Solution:
 1. 动归
 当前位置存储当前抢劫的最大值
 当前位置的值为该位置的值与前第二个之和 与 前一个的最大值
-状态方程为：f[i] = max(f[i - 2] + nums[i], f[i - 1])
+状态方程为：dp[i] = max(f[i - 2] + nums[i], dp[i - 1])
 
 ```java
 public int rob(int[] nums) {
