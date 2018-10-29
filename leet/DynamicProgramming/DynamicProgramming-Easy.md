@@ -1,11 +1,13 @@
 # DynamicProgramming-Easy
 
--121. Best Time to Buy and Sell Stock
--746. Min Cost Climbing Stairs
--70.  Climbing Stairs
--53.  Maximum Subarray
--198. House Robber
--303. Range Sum Query - Immutable
+| Index | Title |
+| ----- | :---: |
+|121|Best Time to Buy and Sell Stock|
+|746|Min Cost Climbing Stairs|
+|70 |Climbing Stairs|
+|53 |Maximum Subarray|
+|198|House Robber|
+|303|Range Sum Query - Immutable|
 
 
 ## 121. Best Time to Buy and Sell Stock
