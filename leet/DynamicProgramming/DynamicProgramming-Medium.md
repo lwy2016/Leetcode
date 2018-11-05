@@ -7,9 +7,11 @@
 |413|Arithmetic Slices|
 |712|Minimum ASCII Delete Sum for Two Strings|
 |646|Maximum Length of Pair Chain|
-
 |343|Integer Break|
 |650|2 Keys Keyboard|
+|392|Is Subsequence|
+|62 |Unique Paths|
+|494|Target Sum|
 
 
 |221|Maximal Square|
@@ -282,7 +284,69 @@ public int findLongestChain(int[][] pairs) {
 
 
 ## 343. Integer Break
+Description:
+Given a positive integer n, break it into the sum of at least two positive integers and maximize the product of those integers. Return the maximum product you can get.
 
+Example 1:
+Input: 2
+Output: 1
+Explanation: 2 = 1 + 1, 1 × 1 = 1.
+
+Example 2:
+Input: 10
+Output: 36
+Explanation: 10 = 3 + 3 + 4, 3 × 3 × 4 = 36.
+Note: You may assume that n is not less than 2 and not larger than 58.
+
+Solution:
+整数拆分，使切分部分的乘积最大
+1. 迭代 
+观察规律
+3   2+1   2* 1=2 
+4   2+2   2* 2=4
+5   2+3   2* 3=6
+6   3+3   3* 3=9
+7   3+4   3* 4=12
+8   3+3+2 3* 3* 2=18
+9   3+3+3 3* 3* 3=27
+10  3+3+4 3* 3* 4=36
+观察，从5开始，数字都要先拆出所有的3，直到剩下一个数字为2或4，
+
+```java
+public int integerBreak(int n) {
+    if (n == 2) return 1;
+    if (n == 3) return 2;
+    
+    int res = 1;
+    while (n > 4) {
+        res *= 3;
+        n = n - 3;
+    }
+    
+    return res * n;
+} 
+```
+
+2. 动态规划
+容易观察到规律，数字差3，倍数差3倍
+当数字大于7时（7的意志），dp[i]=dp[i-3]* 3
+
+```java
+public int integerBreak(int n) {
+    if (n < 2) return 1;
+    int[] dp = new int[n + 1];
+
+    if (n >= 2) dp[2] = 1;
+    if (n >= 3) dp[3] = 2;
+    if (n >= 4) dp[4] = 4;
+    if (n >= 5) dp[5] = 6;
+    if (n >= 6) dp[6] = 9; //When number < 7，Initial process
+    for (int i = 7; i <= n; i++){
+        dp[i] = dp[i - 3] * 3;
+    }
+    return dp[n];
+} 
+```
 
 
 ## 650. 2 Keys Keyboard
@@ -335,6 +399,154 @@ public int minSteps(int n) {
     return dp[n];
 }
 ```
+
+
+## 392. Is Subsequence
+Description:
+Given a string s and a string t, check if s is subsequence of t.
+
+You may assume that there is only lower case English letters in both s and t. t is potentially a very long (length ~= 500,000) string, and s is a short string (<=100).
+
+A subsequence of a string is a new string which is formed from the original string by deleting some (can be none) of the characters without disturbing the relative positions of the remaining characters. (ie, "ace" is a subsequence of "abcde" while "aec" is not).
+
+Example 1:
+s = "abc", t = "ahbgdc"
+
+Return true.
+
+Example 2:
+s = "axc", t = "ahbgdc"
+
+Return false.
+
+Follow up:
+If there are lots of incoming S, say S1, S2, ... , Sk where k >= 1B, and you want to check one by one to see if T has its subsequence. In this scenario, how would you change your code?
+
+Solution:
+判断s是否是t的子串
+
+1. 求出s,t的最长公共子串lcs，然后判定lcs的长度与s是否相等，相等则是子串
+dp[i][j]表示s的前i个字符与t的前j个字符最长的公共子串长度，如果s(i)==t(j)那么dp[i][j]=dp[i-1][j-1]+1
+不等，dp[i][j]=max(dp[i][j-1],dp[i-1][j])
+由于时间复杂度是O(n2),所以超时了
+```java
+public boolean isSubsequence(String s, String t) {
+    int len1 = s.length();
+    int len2 = t.length();
+    
+    int[][] dp = new int[len1 + 1][len2 + 1];
+    
+    for (int i = 1; i <= len1; i++) {
+        for (int j = 1; j <= len2; j++) {
+            if (s.charAt(i - 1) == t.charAt(j - 1)) {
+                dp[i][j] = dp[i - 1][j - 1] + 1;
+            } else {
+                dp[i][j] = Math.max(dp[i][j - 1], dp[i - 1][j]);
+            }
+        }
+    }
+    
+    return dp[len1][len2] == len1;
+}
+```
+
+2. 使用两个指针，分别指向字符串s,t，如果字符相等，则i,j增1，否则j增1，最后看i是否等于s的长度，等于说明已经遍历完了，字符都在t中出现了
+```java
+public boolean isSubsequence(String s, String t) {
+    if (s == null || s.length() == 0) return true;
+    
+    int i = 0, j = 0;
+    while (i < s.length() && j < t.length()) {
+        if (s.charAt(i) == t.charAt(j)) {
+            i++;
+            j++;
+        } else {
+            j++;
+        }
+    }
+    
+    return i == s.length();
+}
+```
+
+## 62. Unique Paths
+Description:
+
+A robot is located at the top-left corner of a m x n grid (marked 'Start' in the diagram below).
+The robot can only move either down or right at any point in time. The robot is trying to reach the bottom-right corner of the grid (marked 'Finish' in the diagram below).
+
+How many possible unique paths are there?
+Above is a 3 x 7 grid. How many possible unique paths are there?
+Note: m and n will be at most 100.
+
+Solution:
+设状态为 dp[i][j]， 表示从起点(1, 1)到达(i, j)的路线条数，
+则状态转移方程为： dp[i][j] = dp[i-1][j] + dp[i][j-1]
+
+1. 二维数组 
+```java
+public int uniquePaths(int m, int n) {
+    int[][] dp = new int[m][n];
+    
+    for (int i = 0; i < m; i++) {
+        dp[i][0] = 1;
+    }
+    for (int j = 0; j < n; j++) {
+        dp[0][j] = 1;
+    }
+    
+    for (int i = 1; i < m; i++) {
+        for (int j = 1; j < n; j++) {
+            dp[i][j] = dp[i - 1][j] + dp[i][j - 1];
+        }
+    }
+    
+    return dp[m - 1][n - 1];
+}
+```
+
+2. 一维数组
+```java
+public int uniquePaths(int m, int n) {
+    int[] f = new int[n];
+    // 第一列都为0
+    f[0] = 1; 
+    for (int i = 0; i < m; i++) {
+        for (int j = 1; j < n; j++) {
+            // 左边的 f[j] 表示更新后的 f[j] 与 公式中的 f[i][j]对应
+            // 右边的 f[j] 表示老的 f[j] 与公式中的 f[i-1][j]对应
+            f[j] = f[j] + f[j - 1];
+        }
+    }
+    return f[n - 1];
+}
+```
+
+
+## 494. Target Sum
+Description:
+You are given a list of non-negative integers, a1, a2, ..., an, and a target, S. Now you have 2 symbols + and -. For each integer, you should choose one from + and - as its new symbol.
+
+Find out how many ways to assign symbols to make sum of integers equal to target S.
+
+Example 1:
+Input: nums is [1, 1, 1, 1, 1], S is 3. 
+Output: 5
+Explanation: 
+
+-1+1+1+1+1 = 3
++1-1+1+1+1 = 3
++1+1-1+1+1 = 3
++1+1+1-1+1 = 3
++1+1+1+1-1 = 3
+
+There are 5 ways to assign symbols to make the sum of nums be target 3.
+Note:
+The length of the given array is positive and will not exceed 20.
+The sum of elements in the given array will not exceed 1000.
+Your output answer is guaranteed to be fitted in a 32-bit integer.
+
+
 
 
 
