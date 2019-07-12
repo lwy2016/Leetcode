@@ -280,7 +280,3 @@ where python 安装所需module ，进入 Scripts 路径 执行  pip install [mo
 2. 部门接口设置权限
 3. 导出功能
 
-
-<script src="<%=basePath%>Department/js/ExportDataModel.js" type="text/javascript" charset="utf-8"></script>
-
-<input type="button" value="导出模板" onClick="exportDatasModel('<%=basePath %>',1,'公安局')" /> 
