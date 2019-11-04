@@ -42,5 +42,5 @@
 |7|[Reverse Integer](https://leetcode.com/problems/reverse-integer/description/)|[Java](https://github.com/lwy2016/Leetcode/blob/master/Solution/Reverse%20Integer.md)|Easy|
 |3|[Longest Substring Without Repeating Characters](https://leetcode.com/problems/longest-substring-without-repeating-characters/)|[Java](https://github.com/lwy2016/Leetcode/blob/master/Solution/LongestSubstringWithoutRepeatingCharacters.md)|Medium|String|
 |2|[Add Two Numbers](https://leetcode.com/problems/add-two-numbers/)|[Java](https://github.com/lwy2016/Leetcode/blob/master/Solution/Add%20Two%20Numbers.md)|Medium|
-|1|[Two Sum](https://leetcode.com/problems/two-sum/)|[Java](https://github.com/lwy2016/Leetcode/blob/master/Solution/Two%20Sum.md)|Medium|Array|
+|1|[Two Sum](https://leetcode.com/problems/two-sum/)|[Java](https://github.com/lwy2016/Leetcode/blob/master/Solution/Two%20Sum.md) |Medium|Array|
     
