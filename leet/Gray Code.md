@@ -22,6 +22,7 @@ Solution:
 n位的格雷码可由n - 1位的格雷码逆推，在最高位前顺序加0，在最高位前逆序加1即可。实际实现中我们可以省去在最高位加0的过程，因为其在数值上和前n - 1位格雷码相同。格雷码的定义，当n = 0时，返回0
 
 ```java
+class Solution {
     public List<Integer> grayCode(int n) {
         if (n < 0) return null;
         
@@ -40,4 +41,5 @@ n位的格雷码可由n - 1位的格雷码逆推，在最高位前顺序加0，�
         
         return currGray;
     }
+}
 ```
